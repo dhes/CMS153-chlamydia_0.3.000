@@ -49,8 +49,8 @@
   "encounter": {
     "reference": "Encounter/37c68e29-903f-422e-8018-953c1ad1a793"
   },
-  "occurrenceDateTime": "2026-01-01T00:00:00.000+00:00",
-  "authoredOn": "2026-01-01T00:00:00.000+00:00",
+  "occurrenceDateTime": "2026-01-01T00:00:00+00:00",
+  "authoredOn": "2026-01-01T00:00:00+00:00",
   "performerType": {
     "coding": [
       {
