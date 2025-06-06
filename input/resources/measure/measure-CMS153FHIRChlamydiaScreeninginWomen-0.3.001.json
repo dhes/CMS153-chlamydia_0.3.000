@@ -421,7 +421,7 @@
         "valueString": "Has Pregnancy Test Exclusion"
       }, {
         "url": "statement",
-        "valueString": "define \"Has Pregnancy Test Exclusion\":\n  exists ( ( ( ( [ServiceRequest: \"Pregnancy Test\"] ).isLaboratoryTestOrder ( ) ) PregnancyTest\n        with ( ( [ServiceRequest: \"XRay Study\"] ).isDiagnosticStudyOrder ( ) ) XrayOrder\n          such that XrayOrder.authoredOn.toInterval ( ) occurs 6 days or less on or after day of PregnancyTest.authoredOn.toInterval ( )\n        where PregnancyTest.authoredOn.toInterval ( ) during \"Measurement Period\"\n    )\n      union ( ( [ServiceRequest: \"Pregnancy Test\"] ).isLaboratoryTestOrder ( ) ) PregnancyTestOrder\n        with ( ( [MedicationRequest: \"Isotretinoin\"] ).isMedicationOrder ( ) ) AccutaneOrder\n          such that AccutaneOrder.authoredOn.toInterval ( ) occurs 6 days or less on or after day of PregnancyTestOrder.authoredOn.toInterval ( )\n        where PregnancyTestOrder.authoredOn.toInterval ( ) during \"Measurement Period\"\n  )"
+        "valueString": "// define HasIntervalTest: Interval[@2026-01-01T00:00:00, @2026-01-01T00:00:00] during Interval[@2026-01-01T00:00:00, @2026-12-31T23:59:59] \n\ndefine \"Has Pregnancy Test Exclusion\":\n  exists ( ( ( ( [ServiceRequest: \"Pregnancy Test\"] ).isLaboratoryTestOrder ( ) ) PregnancyTest\n        with ( ( [ServiceRequest: \"XRay Study\"] ).isDiagnosticStudyOrder ( ) ) XrayOrder\n          such that XrayOrder.authoredOn.toInterval ( ) occurs 6 days or less on or after day of PregnancyTest.authoredOn.toInterval ( )\n        where PregnancyTest.authoredOn.toInterval ( ) during \"Measurement Period\"\n    )\n      union ( ( [ServiceRequest: \"Pregnancy Test\"] ).isLaboratoryTestOrder ( ) ) PregnancyTestOrder\n        with ( ( [MedicationRequest: \"Isotretinoin\"] ).isMedicationOrder ( ) ) AccutaneOrder\n          such that AccutaneOrder.authoredOn.toInterval ( ) occurs 6 days or less on or after day of PregnancyTestOrder.authoredOn.toInterval ( )\n        where PregnancyTestOrder.authoredOn.toInterval ( ) during \"Measurement Period\"\n  )"
       }, {
         "url": "displaySequence",
         "valueInteger": 22
@@ -1499,7 +1499,7 @@
   "title": "Chlamydia Screening in WomenFHIR",
   "status": "active",
   "experimental": false,
-  "date": "2025-06-04T02:46:45+00:00",
+  "date": "2025-06-05T23:42:07+00:00",
   "publisher": "National Committee for Quality Assurance",
   "contact": [ {
     "telecom": [ {
